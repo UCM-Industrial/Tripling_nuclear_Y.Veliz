@@ -1,0 +1,520 @@
+# Scenario 2                            
+Scenario:
+    title: Scenario 2
+    start date: 1998
+    file: Electricity.xls  
+    time steps:
+        - 300x 1 year
+        - 500x 1 year
+        - 100x 10 year
+        - 100x 100 year
+        - 100x 1000 year
+        - 100x 10000 year
+
+    nuclide data: 
+        decay: true
+        spontaneous fission: true
+        specified_isotopes: origen
+        fuel_libraries:   
+            UOX_45: UOX_45
+
+components: 
+
+    U_mine:
+        type: Facility
+        time: 1998
+        state_order:
+            - Umine
+        Umine:
+            type: state
+            duration: 350 year
+            processes:
+                NAT:
+                    type: Conversion
+                    material_out:
+                        NAT: 1
+                    cycle: on demand
+            residence_times:
+                NAT: 210 year
+        tags:
+            - World
+
+    Fabrication_NORTH_AMERICA:
+        type: Facility
+        time: 1998
+        state_order: 
+            - Fab
+        Fab:
+            type: state
+            duration: 500 years
+            processes:
+                UOX_45:
+                    type: Enrichment
+                    Material_in:
+                        NAT: x
+                    Material_out:
+                        UOX_45: 1
+                        DepU: 0.0025
+                    cycle: on demand
+                    fabrication_time: 2 years
+            residence_times:
+                DepU: 0 years
+        tags:
+            - Fabrication_NORTH_AMERICA
+
+    Fabrication_NORTH_AMERICA_COP:
+        type: Facility
+        time: 1998
+        state_order: 
+            - Fab
+        Fab:
+            type: state
+            duration: 500 years
+            processes:
+                UOX_45:
+                    type: Enrichment
+                    Material_in:
+                        NAT: x
+                    Material_out:
+                        UOX_45: 1
+                        DepU: 0.0025
+                    cycle: on demand
+                    fabrication_time: 2 years
+            residence_times:
+                DepU: 0 years
+        tags:
+            - Fabrication_NORTH_AMERICA_COP
+
+    Fabrication_RUSSIA:
+        type: Facility
+        time: 1998
+        state_order: 
+            - Fab
+        Fab:
+            type: state
+            duration: 500 years
+            processes:
+                UOX_45:
+                    type: Enrichment
+                    Material_in:
+                        NAT: x
+                    Material_out:
+                        UOX_45: 1
+                        DepU: 0.0025
+                    cycle: on demand
+                    fabrication_time: 2 years
+            residence_times:
+                DepU: 0 years
+        tags:
+            - Fabrication_RUSSIA
+
+    Fabrication_ASIA:
+        type: Facility
+        time: 1998
+        state_order: 
+            - Fab
+        Fab:
+            type: state
+            duration: 500 years
+            processes:
+                UOX_45:
+                    type: Enrichment
+                    Material_in:
+                        NAT: x
+                    Material_out:
+                        UOX_45: 1
+                        DepU: 0.0025
+                    cycle: on demand
+                    fabrication_time: 2 years
+            residence_times:
+                DepU: 0 years
+        tags:
+            - Fabrication_ASIA
+
+    Fabrication_ASIA_COP:
+        type: Facility
+        time: 1998
+        state_order: 
+            - Fab
+        Fab:
+            type: state
+            duration: 500 years
+            processes:
+                UOX_45:
+                    type: Enrichment
+                    Material_in:
+                        NAT: x
+                    Material_out:
+                        UOX_45: 1
+                        DepU: 0.0025
+                    cycle: on demand
+                    fabrication_time: 2 years
+            residence_times:
+                DepU: 0 years
+        tags:
+            - Fabrication_ASIA_COP
+
+    Fabrication_EAST_EUROPE:
+        type: Facility
+        time: 1998
+        state_order: 
+            - Fab
+        Fab:
+            type: state
+            duration: 500 years
+            processes:
+                UOX_45:
+                    type: Enrichment
+                    Material_in:
+                        NAT: x
+                    Material_out:
+                        UOX_45: 1
+                        DepU: 0.0025
+                    cycle: on demand
+                    fabrication_time: 2 years
+            residence_times:
+                DepU: 0 years
+        tags:
+            - Fabrication_EAST_EUROPE
+
+    Fabrication_EAST_EUROPE_COP:
+        type: Facility
+        time: 1998
+        state_order: 
+            - Fab
+        Fab:
+            type: state
+            duration: 500 years
+            processes:
+                UOX_45:
+                    type: Enrichment
+                    Material_in:
+                        NAT: x
+                    Material_out:
+                        UOX_45: 1
+                        DepU: 0.0025
+                    cycle: on demand
+                    fabrication_time: 2 years
+            residence_times:
+                DepU: 0 years
+        tags:
+            - Fabrication_EAST_EUROPE_COP
+
+    Fabrication_WEST_EUROPE:
+        type: Facility
+        time: 1998
+        state_order: 
+            - Fab
+        Fab:
+            type: state
+            duration: 500 years
+            processes:
+                UOX_45:
+                    type: Enrichment
+                    Material_in:
+                        NAT: x
+                    Material_out:
+                        UOX_45: 1
+                        DepU: 0.0025
+                    cycle: on demand
+                    fabrication_time: 2 years
+            residence_times:
+                DepU: 0 years
+        tags:
+            - Fabrication_WEST_EUROPE
+
+    Fabrication_WEST_EUROPE_COP:
+        type: Facility
+        time: 1998
+        state_order: 
+            - Fab
+        Fab:
+            type: state
+            duration: 500 years
+            processes:
+                UOX_45:
+                    type: Enrichment
+                    Material_in:
+                        NAT: x
+                    Material_out:
+                        UOX_45: 1
+                        DepU: 0.0025
+                    cycle: on demand
+                    fabrication_time: 2 years
+            residence_times:
+                DepU: 0 years
+        tags:
+            - Fabrication_WEST_EUROPE_COP
+
+    NORTH_AMERICA:
+        type: Facility
+        file: NORTH_AMERICA.yaml   
+    NORTH_AMERICA_COP:
+        type: Facility
+        file: NORTH_AMERICA_COP.yaml  
+    RUSSIA:
+        type: Facility
+        file: RUSSIA.yaml      
+    ASIA:
+        type: Facility
+        file: ASIA.yaml     
+    ASIA_COP:
+        type: Facility
+        file: ASIA_COP.yaml      
+    EAST_EUROPE:
+        type: Facility
+        file: EAST_EUROPE.yaml     
+    EAST_EUROPE_COP:
+        type: Facility
+        file: EAST_EUROPE_COP.yaml  
+    WEST_EUROPE:
+        type: Facility
+        file: WEST_EUROPE.yaml     
+    WEST_EUROPE_COP:
+        type: Facility
+        file: WEST_EUROPE_COP.yaml     
+    WORLD:
+        type: Facility
+        file: WORLD.yaml 
+
+    DepU_pool:
+        type: Facility
+        time: 2030
+        file: FinalDisposal.yaml  
+        tags:
+            - World        
+    FD:
+        type: Facility
+        time: 2030
+        file: FinalDisposal.yaml
+        tags:
+            - World
+            
+connections:
+    NORTH_AMERICA:
+        - UOX_45 from Fabrication_NORTH_AMERICA
+        - UOX_45_SPENT to FD
+    NORTH_AMERICA_COP:
+        - UOX_45 from Fabrication_NORTH_AMERICA_COP
+        - UOX_45_SPENT to FD
+    RUSSIA:
+        - UOX_45 from Fabrication_RUSSIA
+        - UOX_45_SPENT to FD
+    ASIA:
+        - UOX_45 from Fabrication_ASIA
+        - UOX_45_SPENT to FD
+    ASIA_COP:
+        - UOX_45 from Fabrication_ASIA_COP
+        - UOX_45_SPENT to FD       
+    EAST_EUROPE:
+        - UOX_45 from Fabrication_EAST_EUROPE
+        - UOX_45_SPENT to FD
+    EAST_EUROPE_COP:
+        - UOX_45 from Fabrication_EAST_EUROPE_COP
+        - UOX_45_SPENT to FD  
+    WEST_EUROPE:
+        - UOX_45 from Fabrication_WEST_EUROPE
+        - UOX_45_SPENT to FD
+    WEST_EUROPE_COP:
+        - UOX_45 from Fabrication_WEST_EUROPE_COP
+        - UOX_45_SPENT to FD   
+    WORLD:
+        - UOX_45_SPENT to FD
+        - UOX_45 from Fabrication_NORTH_AMERICA
+        - UOX_45 from Fabrication_NORTH_AMERICA_COP
+        - UOX_45 from Fabrication_RUSSIA
+        - UOX_45 from Fabrication_ASIA
+        - UOX_45 from Fabrication_ASIA_COP
+        - UOX_45 from Fabrication_EAST_EUROPE
+        - UOX_45 from Fabrication_EAST_EUROPE_COP
+        - UOX_45 from Fabrication_WEST_EUROPE
+        - UOX_45 from Fabrication_WEST_EUROPE_COP
+        
+    Fabrication_NORTH_AMERICA:
+        - NAT from U_mine  
+        - DepU to DepU_pool
+    Fabrication_NORTH_AMERICA_COP:
+        - NAT from U_mine  
+        - DepU to DepU_pool
+    Fabrication_RUSSIA:
+        - NAT from U_mine  
+        - DepU to DepU_pool
+    Fabrication_ASIA:
+        - NAT from U_mine  
+        - DepU to DepU_pool
+    Fabrication_ASIA_COP:
+        - NAT from U_mine  
+        - DepU to DepU_pool
+    Fabrication_EAST_EUROPE:
+        - NAT from U_mine  
+        - DepU to DepU_pool
+    Fabrication_EAST_EUROPE_COP:
+        - NAT from U_mine  
+        - DepU to DepU_pool
+    Fabrication_WEST_EUROPE:
+        - NAT from U_mine  
+        - DepU to DepU_pool
+    Fabrication_WEST_EUROPE_COP:
+        - NAT from U_mine  
+        - DepU to DepU_pool
+
+Viewers:
+    SWU_NORTH_AMERICA:
+        type: TxtFile
+        outputfile: SWU_NORTH_AMERICA.xlsx
+        variables: [Swu]
+        observables:
+            - Fabrication_NORTH_AMERICA
+
+    SWU_NORTH_AMERICA_COP:
+        type: TxtFile
+        outputfile: SWU_NORTH_AMERICA_COP.xlsx
+        variables: [Swu]
+        observables:
+            - Fabrication_NORTH_AMERICA_COP
+
+    SWU_RUSSIA:
+        type: TxtFile
+        outputfile: SWU_RUSSIA.xlsx
+        variables: [Swu]
+        observables:
+            - Fabrication_RUSSIA
+
+    SWU_ASIA:
+        type: TxtFile
+        outputfile: SWU_ASIA.xlsx
+        variables: [Swu]
+        observables:
+            - Fabrication_ASIA
+
+    SWU_ASIA_COP:
+        type: TxtFile
+        outputfile: SWU_ASIA_COP.xlsx
+        variables: [Swu]
+        observables:
+            - Fabrication_ASIA_COP
+
+    SWU_EAST_EUROPE:
+        type: TxtFile
+        outputfile: SWU_EAST_EUROPE.xlsx
+        variables: [Swu]
+        observables:
+            - Fabrication_EAST_EUROPE
+
+    SWU_EAST_EUROPE_COP:
+        type: TxtFile
+        outputfile: SWU_EAST_EUROPE_COP.xlsx
+        variables: [Swu]
+        observables:
+            - Fabrication_EAST_EUROPE_COP
+
+    SWU_WEST_EUROPE:
+        type: TxtFile
+        outputfile: SWU_WEST_EUROPE.xlsx
+        variables: [Swu]
+        observables:
+            - Fabrication_WEST_EUROPE
+
+    SWU_WEST_EUROPE_COP:
+        type: TxtFile
+        outputfile: SWU_WEST_EUROPE_COP.xlsx
+        variables: [Swu]
+        observables:
+            - Fabrication_WEST_EUROPE_COP
+
+    Packages:
+        type: TxtFile
+        outputfile: Packages.xlsx
+        variables: [Packages]
+        observables:
+            - Fabrication_NORTH_AMERICA
+            - Fabrication_NORTH_AMERICA_COP
+            - Fabrication_RUSSIA
+            - Fabrication_ASIA
+            - Fabrication_ASIA_COP
+            - Fabrication_EAST_EUROPE
+            - Fabrication_EAST_EUROPE_COP
+            - Fabrication_WEST_EUROPE
+            - Fabrication_WEST_EUROPE_COP
+            - WORLD
+            - FD
+            
+    Fab_flow:
+        type: TxtFile
+        outputfile: Fab_flow.xlsx
+        variables: [Packages]
+        observables:
+            - Fabrication_NORTH_AMERICA to NORTH_AMERICA
+            - Fabrication_NORTH_AMERICA_COP to NORTH_AMERICA_COP
+            - Fabrication_RUSSIA to RUSSIA
+            - Fabrication_ASIA to ASIA
+            - Fabrication_ASIA_COP to ASIA_COP
+            - Fabrication_EAST_EUROPE to EAST_EUROPE
+            - Fabrication_EAST_EUROPE_COP to EAST_EUROPE_COP
+            - Fabrication_WEST_EUROPE to WEST_EUROPE
+            - Fabrication_WEST_EUROPE_COP to WEST_EUROPE_COP
+            
+    ISO:
+        type: TxtFile
+        outputfile: ISO_MOX_RMA_ADS.xlsx
+        variables: [922320, 922330, 922340, 922350, 922360, 922380, 
+                    942360, 942380, 942390, 942400, 942410, 942420,
+                    952410, 952421, 952430, 932370, 932390, 962420,
+                    962430, 962440, 962450, 962460, 962470, 962480, 551370, 380900, 601480, total_weight]
+        observables:
+             - Fabrication_NORTH_AMERICA
+             - Fabrication_NORTH_AMERICA_COP
+             - Fabrication_RUSSIA
+             - Fabrication_ASIA
+             - Fabrication_ASIA_COP
+             - Fabrication_EAST_EUROPE
+             - Fabrication_EAST_EUROPE_COP
+             - Fabrication_WEST_EUROPE
+             - Fabrication_WEST_EUROPE_COP
+             - REACTOR
+             - FD
+             - WORLD
+   
+    HM:
+        type: TxtFile
+        outputfile: HM_MOX_RMA_ADS.xlsx
+        variables: [92, 93, 94, 95, 96, Fission_product, minor_actinide]
+        observables:
+            - NORTH_AMERICA
+            - NORTH_AMERICA_COP
+            - RUSSIA
+            - ASIA    
+            - ASIA_COP  
+            - EAST_EUROPE
+            - EAST_EUROPE_COP
+            - WEST_EUROPE
+            - WEST_EUROPE_COP
+            - WORLD
+            - REACTOR 
+            - FD
+        
+    RT_DISPOSAL:
+        type: TxtFile
+        outputfile: RT.xlsx
+        variables: [Radio_toxicity, Total_weight, heat, alpha_heat]
+        observables:
+            - FD
+            - Fabrication_NORTH_AMERICA
+            - Fabrication_NORTH_AMERICA_COP
+            - Fabrication_RUSSIA
+            - Fabrication_ASIA
+            - Fabrication_ASIA_COP
+            - Fabrication_EAST_EUROPE
+            - Fabrication_EAST_EUROPE_COP
+            - Fabrication_WEST_EUROPE
+            - Fabrication_WEST_EUROPE_COP
+            - REACTOR
+        
+    power:
+        type: TxtFile
+        outputfile: Total_power.xlsx
+        variables: [electrical_power, thermal_power, installed_power]
+        observables: 
+            - REACTOR
+
+        
